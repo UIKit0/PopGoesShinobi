@@ -7,12 +7,14 @@
 //
 
 #import "SCAnimatingDataSource.h"
+#import <POP/POP.h>
 
 @interface SCAnimatingDataSource () <SChartDatasource>
 
 @property (nonatomic, strong) NSArray *categories;
 @property (nonatomic, strong) NSArray *datapoints;
 @property (nonatomic, weak) ShinobiChart *chart;
+@property (nonatomic, strong) POPAnimatableProperty *animateableValuesProperty;
 
 @end
 
@@ -25,11 +27,22 @@
         self.categories = categories;
         self.chart = chart;
         self.chart.datasource = self;
-        NSMutableArray *zeroFillValues = [NSMutableArray arrayWithCapacity:[self.categories count]];
-        [categories enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            [zeroFillValues addObject:@0];
+        [self initialiseDataPoints];
+        
+        self.animateableValuesProperty = [POPAnimatableProperty propertyWithName:@"com.shinobicontrols.popgoesshinobi.animatingdatasource" initializer:^(POPMutableAnimatableProperty *prop) {
+            // read value
+            prop.readBlock = ^(SChartDataPoint *dp, CGFloat values[]) {
+                values[0] = [dp.yValue floatValue];
+            };
+            // write value
+            prop.writeBlock = ^(SChartDataPoint *dp, const CGFloat values[]) {
+                dp.yValue = @(values[0]);
+                [self.chart reloadData];
+                [self.chart redrawChart];
+            };
+            // dynamics threshold
+            prop.threshold = 0.01;
         }];
-        [self animateToValues:zeroFillValues];
     }
     return self;
 }
@@ -42,16 +55,30 @@
                                                 userInfo:nil];
         @throw ex;
     }
+    
+    [self.datapoints enumerateObjectsUsingBlock:^(SChartDataPoint *dp, NSUInteger idx, BOOL *stop) {
+        POPSpringAnimation *anim = [POPSpringAnimation animation];
+        anim.property = self.animateableValuesProperty;
+        anim.fromValue = dp.yValue;
+        anim.toValue = values[idx];
+        anim.springBounciness = 10;
+        anim.springSpeed = 3;
+        
+        [dp pop_addAnimation:anim forKey:@"ValueChangeAnimation"];
+    }];
+}
+
+#pragma mark - Non-public methods
+- (void)initialiseDataPoints
+{
     NSMutableArray *newDatapoints = [NSMutableArray new];
     [self.categories enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         SChartDataPoint *dp = [SChartDataPoint new];
         dp.xValue = obj;
-        dp.yValue = values[idx];
+        dp.yValue = @0;
         [newDatapoints addObject:dp];
     }];
     self.datapoints = [newDatapoints copy];
-    [self.chart reloadData];
-    [self.chart redrawChart];
 }
 
 #pragma mark - SChartDataSource methods
