@@ -12,5 +12,7 @@
 @interface SCViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet ShinobiChart *chart;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *yearSelectorSegmented;
+- (IBAction)handleYearSelected:(id)sender;
 
 @end

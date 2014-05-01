@@ -17,23 +17,38 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53W-Af-Dv9" customClass="ShinobiChart">
-                                <rect key="frame" x="0.0" y="20" width="568" height="300"/>
+                                <rect key="frame" x="0.0" y="20" width="568" height="256"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="T0N-8o-G2p">
+                                <rect key="frame" x="217" y="284" width="134" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="2012"/>
+                                    <segment title="2013"/>
+                                    <segment title="2014"/>
+                                </segments>
+                                <connections>
+                                    <action selector="handleYearSelected:" destination="vXZ-lx-hvc" eventType="valueChanged" id="rSL-2K-GMC"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="T0N-8o-G2p" firstAttribute="top" secondItem="53W-Af-Dv9" secondAttribute="bottom" constant="8" symbolic="YES" id="Aoo-8c-pZh"/>
                             <constraint firstItem="53W-Af-Dv9" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Om0-20-XkO"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="T0N-8o-G2p" secondAttribute="bottom" constant="20" symbolic="YES" id="RfI-ww-HAf"/>
                             <constraint firstAttribute="trailing" secondItem="53W-Af-Dv9" secondAttribute="trailing" id="beo-EC-YDo"/>
                             <constraint firstItem="53W-Af-Dv9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="g2S-4P-YBf"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="53W-Af-Dv9" secondAttribute="bottom" id="nbu-Kg-zqT"/>
+                            <constraint firstAttribute="centerX" secondItem="T0N-8o-G2p" secondAttribute="centerX" id="sNl-LU-jFd"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="chart" destination="53W-Af-Dv9" id="I97-n3-BaH"/>
+                        <outlet property="yearSelectorSegmented" destination="T0N-8o-G2p" id="xFA-XC-0YY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

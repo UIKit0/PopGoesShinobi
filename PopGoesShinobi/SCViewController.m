@@ -12,6 +12,7 @@
 @interface SCViewController ()
 
 @property (nonatomic, strong) SCAnimatingDataSource *datasource;
+@property (nonatomic, strong) NSArray *yearlyData;
 
 @end
 
@@ -29,15 +30,18 @@
                                                         categories:categories];
     
     SChartAxis *xAxis = [SChartCategoryAxis new];
-    xAxis.title = @"Quarter";
     self.chart.xAxis = xAxis;
     SChartAxis *yAxis = [[SChartNumberAxis alloc] initWithRange:[[SChartNumberRange alloc] initWithMinimum:@0 andMaximum:@200]];
     yAxis.title = @"Sales";
     self.chart.yAxis = yAxis;
     
-    NSArray *values = @[@120, @140, @100, @180];
-    [self.datasource animateToValues:values];
+    self.yearlyData = @[@[@120, @140, @50,  @120],
+                        @[@10,  @60,  @110, @40],
+                        @[@150, @120, @160, @200]];
     
+    // Render the first year available
+    self.yearSelectorSegmented.selectedSegmentIndex = 0;
+    [self handleYearSelected:self.yearSelectorSegmented];
 }
 
 - (NSUInteger)supportedInterfaceOrientations
@@ -45,4 +49,8 @@
     return UIInterfaceOrientationMaskLandscape;
 }
 
+- (IBAction)handleYearSelected:(id)sender {
+    NSArray *values = self.yearlyData[self.yearSelectorSegmented.selectedSegmentIndex];
+    [self.datasource animateToValues:values];
+}
 @end
