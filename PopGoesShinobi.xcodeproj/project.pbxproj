@@ -1,1165 +1,603 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>1A920C1DF12D4514B691447A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DFA7DB616217410D82E78B27</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>4D5A776E7B5044349E656F41</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>617C2135FF51479C8018FBCD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>860183D2CA4D4A299B2FDDDD</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>A08406569F3F47F48D10A84A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Warn for TODO and FIXME comments</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>KEYWORDS="TODO:|FIXME:|\?\?\?:|\!\!\!:"
-FILE_EXTENSIONS="h|m|mm|c|cpp"
-find -E "${SRCROOT}" -ipath "${SRCROOT}/pods" -prune -o \( -regex ".*\.($FILE_EXTENSIONS)$" \) -print0 | xargs -0 egrep --with-filename --line-number --only-matching "($KEYWORDS).*\$" | perl -p -e "s/($KEYWORDS)/ warning: \$1/"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>1</string>
-		</dict>
-		<key>DFA7DB616217410D82E78B27</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F45CDD9419124E3700CB06A8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F45CDDA619124E3700CB06A8</string>
-				<string>F45CDDC519124E3700CB06A8</string>
-				<string>F45CDD9F19124E3700CB06A8</string>
-				<string>F45CDD9E19124E3700CB06A8</string>
-				<string>617C2135FF51479C8018FBCD</string>
-			</array>
-			<key>indentWidth</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-			<key>tabWidth</key>
-			<string>4</string>
-			<key>usesTabs</key>
-			<string>0</string>
-		</dict>
-		<key>F45CDD9519124E3700CB06A8</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>CLASSPREFIX</key>
-				<string>SC</string>
-				<key>LastUpgradeCheck</key>
-				<string>0510</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Shinobi Controls</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>F45CDDBD19124E3700CB06A8</key>
-					<dict>
-						<key>TestTargetID</key>
-						<string>F45CDD9C19124E3700CB06A8</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>F45CDD9819124E3700CB06A8</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>F45CDD9419124E3700CB06A8</string>
-			<key>productRefGroup</key>
-			<string>F45CDD9E19124E3700CB06A8</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>F45CDD9C19124E3700CB06A8</string>
-				<string>F45CDDBD19124E3700CB06A8</string>
-			</array>
-		</dict>
-		<key>F45CDD9819124E3700CB06A8</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>F45CDDCD19124E3700CB06A8</string>
-				<string>F45CDDCE19124E3700CB06A8</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>F45CDD9919124E3700CB06A8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F45CDDB119124E3700CB06A8</string>
-				<string>F45CDDB719124E3700CB06A8</string>
-				<string>F45CDDAD19124E3700CB06A8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F45CDD9A19124E3700CB06A8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F45CDDA319124E3700CB06A8</string>
-				<string>F45CDDA519124E3700CB06A8</string>
-				<string>F45CDDA119124E3700CB06A8</string>
-				<string>1A920C1DF12D4514B691447A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F45CDD9B19124E3700CB06A8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F45CDDB919124E3700CB06A8</string>
-				<string>F45CDDAB19124E3700CB06A8</string>
-				<string>F45CDDB419124E3700CB06A8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F45CDD9C19124E3700CB06A8</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>F45CDDCF19124E3700CB06A8</string>
-			<key>buildPhases</key>
-			<array>
-				<string>860183D2CA4D4A299B2FDDDD</string>
-				<string>F45CDD9919124E3700CB06A8</string>
-				<string>F45CDD9A19124E3700CB06A8</string>
-				<string>F45CDD9B19124E3700CB06A8</string>
-				<string>A08406569F3F47F48D10A84A</string>
-				<string>4D5A776E7B5044349E656F41</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PopGoesShinobi</string>
-			<key>productName</key>
-			<string>PopGoesShinobi</string>
-			<key>productReference</key>
-			<string>F45CDD9D19124E3700CB06A8</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>F45CDD9D19124E3700CB06A8</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>PopGoesShinobi.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F45CDD9E19124E3700CB06A8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F45CDD9D19124E3700CB06A8</string>
-				<string>F45CDDBE19124E3700CB06A8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDD9F19124E3700CB06A8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F45CDDA019124E3700CB06A8</string>
-				<string>F45CDDA219124E3700CB06A8</string>
-				<string>F45CDDA419124E3700CB06A8</string>
-				<string>F45CDDBF19124E3700CB06A8</string>
-				<string>DFA7DB616217410D82E78B27</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDA019124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>F45CDDA119124E3700CB06A8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F45CDDA019124E3700CB06A8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F45CDDA219124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>F45CDDA319124E3700CB06A8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F45CDDA219124E3700CB06A8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F45CDDA419124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>F45CDDA519124E3700CB06A8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F45CDDA419124E3700CB06A8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F45CDDA619124E3700CB06A8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F45CDDAF19124E3700CB06A8</string>
-				<string>F45CDDB019124E3700CB06A8</string>
-				<string>F45CDDB219124E3700CB06A8</string>
-				<string>F45CDDB519124E3700CB06A8</string>
-				<string>F45CDDB619124E3700CB06A8</string>
-				<string>F45CDDB819124E3700CB06A8</string>
-				<string>F45CDDA719124E3700CB06A8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PopGoesShinobi</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDA719124E3700CB06A8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F45CDDA819124E3700CB06A8</string>
-				<string>F45CDDA919124E3700CB06A8</string>
-				<string>F45CDDAC19124E3700CB06A8</string>
-				<string>F45CDDAE19124E3700CB06A8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDA819124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>PopGoesShinobi-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDA919124E3700CB06A8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F45CDDAA19124E3700CB06A8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDAA19124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDAB19124E3700CB06A8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F45CDDA919124E3700CB06A8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F45CDDAC19124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDAD19124E3700CB06A8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F45CDDAC19124E3700CB06A8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F45CDDAE19124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PopGoesShinobi-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDAF19124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SCAppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDB019124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SCAppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDB119124E3700CB06A8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F45CDDB019124E3700CB06A8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F45CDDB219124E3700CB06A8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F45CDDB319124E3700CB06A8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDB319124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDB419124E3700CB06A8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F45CDDB219124E3700CB06A8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F45CDDB519124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SCViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDB619124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SCViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDB719124E3700CB06A8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F45CDDB619124E3700CB06A8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F45CDDB819124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Images.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDB919124E3700CB06A8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F45CDDB819124E3700CB06A8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F45CDDBA19124E3700CB06A8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F45CDDCC19124E3700CB06A8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F45CDDBB19124E3700CB06A8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F45CDDC019124E3700CB06A8</string>
-				<string>F45CDDC219124E3700CB06A8</string>
-				<string>F45CDDC119124E3700CB06A8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F45CDDBC19124E3700CB06A8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F45CDDCA19124E3700CB06A8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F45CDDBD19124E3700CB06A8</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>F45CDDD219124E3700CB06A8</string>
-			<key>buildPhases</key>
-			<array>
-				<string>F45CDDBA19124E3700CB06A8</string>
-				<string>F45CDDBB19124E3700CB06A8</string>
-				<string>F45CDDBC19124E3700CB06A8</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>F45CDDC419124E3700CB06A8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PopGoesShinobiTests</string>
-			<key>productName</key>
-			<string>PopGoesShinobiTests</string>
-			<key>productReference</key>
-			<string>F45CDDBE19124E3700CB06A8</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>F45CDDBE19124E3700CB06A8</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>PopGoesShinobiTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F45CDDBF19124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>XCTest.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/XCTest.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>F45CDDC019124E3700CB06A8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F45CDDBF19124E3700CB06A8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F45CDDC119124E3700CB06A8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F45CDDA019124E3700CB06A8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F45CDDC219124E3700CB06A8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F45CDDA419124E3700CB06A8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F45CDDC319124E3700CB06A8</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>F45CDD9519124E3700CB06A8</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>F45CDD9C19124E3700CB06A8</string>
-			<key>remoteInfo</key>
-			<string>PopGoesShinobi</string>
-		</dict>
-		<key>F45CDDC419124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>F45CDD9C19124E3700CB06A8</string>
-			<key>targetProxy</key>
-			<string>F45CDDC319124E3700CB06A8</string>
-		</dict>
-		<key>F45CDDC519124E3700CB06A8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F45CDDCB19124E3700CB06A8</string>
-				<string>F45CDDC619124E3700CB06A8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PopGoesShinobiTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDC619124E3700CB06A8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F45CDDC719124E3700CB06A8</string>
-				<string>F45CDDC819124E3700CB06A8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDC719124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>PopGoesShinobiTests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDC819124E3700CB06A8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F45CDDC919124E3700CB06A8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDC919124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDCA19124E3700CB06A8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F45CDDC819124E3700CB06A8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F45CDDCB19124E3700CB06A8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PopGoesShinobiTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F45CDDCC19124E3700CB06A8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F45CDDCB19124E3700CB06A8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F45CDDCD19124E3700CB06A8</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_MISSING_NEWLINE</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_CHECK_SWITCH_STATEMENTS</key>
-				<string>YES</string>
-				<key>GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED</key>
-				<string>YES</string>
-				<key>GCC_WARN_MISSING_PARENTHESES</key>
-				<string>YES</string>
-				<key>GCC_WARN_SHADOW</key>
-				<string>YES</string>
-				<key>GCC_WARN_SIGN_COMPARE</key>
-				<string>YES</string>
-				<key>GCC_WARN_TYPECHECK_CALLS_TO_PRINTF</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_LABEL</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VALUE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.1</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>RUN_CLANG_STATIC_ANALYZER</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F45CDDCE19124E3700CB06A8</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_MISSING_NEWLINE</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_CHECK_SWITCH_STATEMENTS</key>
-				<string>YES</string>
-				<key>GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED</key>
-				<string>YES</string>
-				<key>GCC_WARN_MISSING_PARENTHESES</key>
-				<string>YES</string>
-				<key>GCC_WARN_SHADOW</key>
-				<string>YES</string>
-				<key>GCC_WARN_SIGN_COMPARE</key>
-				<string>YES</string>
-				<key>GCC_WARN_TYPECHECK_CALLS_TO_PRINTF</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_LABEL</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VALUE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.1</string>
-				<key>RUN_CLANG_STATIC_ANALYZER</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>F45CDDCF19124E3700CB06A8</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>F45CDDD019124E3700CB06A8</string>
-				<string>F45CDDD119124E3700CB06A8</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>F45CDDD019124E3700CB06A8</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>617C2135FF51479C8018FBCD</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>PopGoesShinobi/PopGoesShinobi-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PopGoesShinobi/PopGoesShinobi-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F45CDDD119124E3700CB06A8</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>617C2135FF51479C8018FBCD</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>PopGoesShinobi/PopGoesShinobi-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PopGoesShinobi/PopGoesShinobi-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>F45CDDD219124E3700CB06A8</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>F45CDDD319124E3700CB06A8</string>
-				<string>F45CDDD419124E3700CB06A8</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>F45CDDD319124E3700CB06A8</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/PopGoesShinobi.app/PopGoesShinobi</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>PopGoesShinobi/PopGoesShinobi-Prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>PopGoesShinobiTests/PopGoesShinobiTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F45CDDD419124E3700CB06A8</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/PopGoesShinobi.app/PopGoesShinobi</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>PopGoesShinobi/PopGoesShinobi-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PopGoesShinobiTests/PopGoesShinobiTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>F45CDD9519124E3700CB06A8</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A920C1DF12D4514B691447A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFA7DB616217410D82E78B27 /* libPods.a */; };
+		F45CDDA119124E3700CB06A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45CDDA019124E3700CB06A8 /* Foundation.framework */; };
+		F45CDDA319124E3700CB06A8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45CDDA219124E3700CB06A8 /* CoreGraphics.framework */; };
+		F45CDDA519124E3700CB06A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45CDDA419124E3700CB06A8 /* UIKit.framework */; };
+		F45CDDAB19124E3700CB06A8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F45CDDA919124E3700CB06A8 /* InfoPlist.strings */; };
+		F45CDDAD19124E3700CB06A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F45CDDAC19124E3700CB06A8 /* main.m */; };
+		F45CDDB119124E3700CB06A8 /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F45CDDB019124E3700CB06A8 /* SCAppDelegate.m */; };
+		F45CDDB419124E3700CB06A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45CDDB219124E3700CB06A8 /* Main.storyboard */; };
+		F45CDDB719124E3700CB06A8 /* SCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F45CDDB619124E3700CB06A8 /* SCViewController.m */; };
+		F45CDDB919124E3700CB06A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45CDDB819124E3700CB06A8 /* Images.xcassets */; };
+		F45CDDC019124E3700CB06A8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45CDDBF19124E3700CB06A8 /* XCTest.framework */; };
+		F45CDDC119124E3700CB06A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45CDDA019124E3700CB06A8 /* Foundation.framework */; };
+		F45CDDC219124E3700CB06A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45CDDA419124E3700CB06A8 /* UIKit.framework */; };
+		F45CDDCA19124E3700CB06A8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F45CDDC819124E3700CB06A8 /* InfoPlist.strings */; };
+		F45CDDCC19124E3700CB06A8 /* PopGoesShinobiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F45CDDCB19124E3700CB06A8 /* PopGoesShinobiTests.m */; };
+		F45CDDDA191255A100CB06A8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45CDDD5191255A100CB06A8 /* CoreText.framework */; };
+		F45CDDDB191255A100CB06A8 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F45CDDD6191255A100CB06A8 /* libc++.dylib */; };
+		F45CDDDC191255A100CB06A8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45CDDD7191255A100CB06A8 /* OpenGLES.framework */; };
+		F45CDDDD191255A100CB06A8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45CDDD8191255A100CB06A8 /* Security.framework */; };
+		F45CDDDE191255A100CB06A8 /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45CDDD9191255A100CB06A8 /* ShinobiCharts.framework */; };
+		F45CDDE2191256E200CB06A8 /* SCAnimatingDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F45CDDE1191256E200CB06A8 /* SCAnimatingDataSource.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F45CDDC319124E3700CB06A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F45CDD9519124E3700CB06A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F45CDD9C19124E3700CB06A8;
+			remoteInfo = PopGoesShinobi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		617C2135FF51479C8018FBCD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		DFA7DB616217410D82E78B27 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F45CDD9D19124E3700CB06A8 /* PopGoesShinobi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopGoesShinobi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F45CDDA019124E3700CB06A8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F45CDDA219124E3700CB06A8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F45CDDA419124E3700CB06A8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F45CDDA819124E3700CB06A8 /* PopGoesShinobi-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PopGoesShinobi-Info.plist"; sourceTree = "<group>"; };
+		F45CDDAA19124E3700CB06A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F45CDDAC19124E3700CB06A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F45CDDAE19124E3700CB06A8 /* PopGoesShinobi-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PopGoesShinobi-Prefix.pch"; sourceTree = "<group>"; };
+		F45CDDAF19124E3700CB06A8 /* SCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAppDelegate.h; sourceTree = "<group>"; };
+		F45CDDB019124E3700CB06A8 /* SCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCAppDelegate.m; sourceTree = "<group>"; };
+		F45CDDB319124E3700CB06A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F45CDDB519124E3700CB06A8 /* SCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCViewController.h; sourceTree = "<group>"; };
+		F45CDDB619124E3700CB06A8 /* SCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCViewController.m; sourceTree = "<group>"; };
+		F45CDDB819124E3700CB06A8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F45CDDBE19124E3700CB06A8 /* PopGoesShinobiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopGoesShinobiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F45CDDBF19124E3700CB06A8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F45CDDC719124E3700CB06A8 /* PopGoesShinobiTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PopGoesShinobiTests-Info.plist"; sourceTree = "<group>"; };
+		F45CDDC919124E3700CB06A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F45CDDCB19124E3700CB06A8 /* PopGoesShinobiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopGoesShinobiTests.m; sourceTree = "<group>"; };
+		F45CDDD5191255A100CB06A8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		F45CDDD6191255A100CB06A8 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		F45CDDD7191255A100CB06A8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		F45CDDD8191255A100CB06A8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F45CDDD9191255A100CB06A8 /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiCharts.framework; path = Library/Frameworks/ShinobiCharts.framework; sourceTree = DEVELOPER_DIR; };
+		F45CDDE0191256E200CB06A8 /* SCAnimatingDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAnimatingDataSource.h; sourceTree = "<group>"; };
+		F45CDDE1191256E200CB06A8 /* SCAnimatingDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAnimatingDataSource.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F45CDD9A19124E3700CB06A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F45CDDDA191255A100CB06A8 /* CoreText.framework in Frameworks */,
+				F45CDDDB191255A100CB06A8 /* libc++.dylib in Frameworks */,
+				F45CDDDC191255A100CB06A8 /* OpenGLES.framework in Frameworks */,
+				F45CDDDD191255A100CB06A8 /* Security.framework in Frameworks */,
+				F45CDDDE191255A100CB06A8 /* ShinobiCharts.framework in Frameworks */,
+				F45CDDA319124E3700CB06A8 /* CoreGraphics.framework in Frameworks */,
+				F45CDDA519124E3700CB06A8 /* UIKit.framework in Frameworks */,
+				F45CDDA119124E3700CB06A8 /* Foundation.framework in Frameworks */,
+				1A920C1DF12D4514B691447A /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F45CDDBB19124E3700CB06A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F45CDDC019124E3700CB06A8 /* XCTest.framework in Frameworks */,
+				F45CDDC219124E3700CB06A8 /* UIKit.framework in Frameworks */,
+				F45CDDC119124E3700CB06A8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F45CDD9419124E3700CB06A8 = {
+			isa = PBXGroup;
+			children = (
+				F45CDDA619124E3700CB06A8 /* PopGoesShinobi */,
+				F45CDDC519124E3700CB06A8 /* PopGoesShinobiTests */,
+				F45CDD9F19124E3700CB06A8 /* Frameworks */,
+				F45CDD9E19124E3700CB06A8 /* Products */,
+				617C2135FF51479C8018FBCD /* Pods.xcconfig */,
+			);
+			indentWidth = 4;
+			sourceTree = "<group>";
+			tabWidth = 4;
+			usesTabs = 0;
+		};
+		F45CDD9E19124E3700CB06A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F45CDD9D19124E3700CB06A8 /* PopGoesShinobi.app */,
+				F45CDDBE19124E3700CB06A8 /* PopGoesShinobiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F45CDD9F19124E3700CB06A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F45CDDD5191255A100CB06A8 /* CoreText.framework */,
+				F45CDDD6191255A100CB06A8 /* libc++.dylib */,
+				F45CDDD7191255A100CB06A8 /* OpenGLES.framework */,
+				F45CDDD8191255A100CB06A8 /* Security.framework */,
+				F45CDDD9191255A100CB06A8 /* ShinobiCharts.framework */,
+				F45CDDA019124E3700CB06A8 /* Foundation.framework */,
+				F45CDDA219124E3700CB06A8 /* CoreGraphics.framework */,
+				F45CDDA419124E3700CB06A8 /* UIKit.framework */,
+				F45CDDBF19124E3700CB06A8 /* XCTest.framework */,
+				DFA7DB616217410D82E78B27 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F45CDDA619124E3700CB06A8 /* PopGoesShinobi */ = {
+			isa = PBXGroup;
+			children = (
+				F45CDDDF191255A800CB06A8 /* Datasource */,
+				F45CDDAF19124E3700CB06A8 /* SCAppDelegate.h */,
+				F45CDDB019124E3700CB06A8 /* SCAppDelegate.m */,
+				F45CDDB219124E3700CB06A8 /* Main.storyboard */,
+				F45CDDB519124E3700CB06A8 /* SCViewController.h */,
+				F45CDDB619124E3700CB06A8 /* SCViewController.m */,
+				F45CDDB819124E3700CB06A8 /* Images.xcassets */,
+				F45CDDA719124E3700CB06A8 /* Supporting Files */,
+			);
+			path = PopGoesShinobi;
+			sourceTree = "<group>";
+		};
+		F45CDDA719124E3700CB06A8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F45CDDA819124E3700CB06A8 /* PopGoesShinobi-Info.plist */,
+				F45CDDA919124E3700CB06A8 /* InfoPlist.strings */,
+				F45CDDAC19124E3700CB06A8 /* main.m */,
+				F45CDDAE19124E3700CB06A8 /* PopGoesShinobi-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F45CDDC519124E3700CB06A8 /* PopGoesShinobiTests */ = {
+			isa = PBXGroup;
+			children = (
+				F45CDDCB19124E3700CB06A8 /* PopGoesShinobiTests.m */,
+				F45CDDC619124E3700CB06A8 /* Supporting Files */,
+			);
+			path = PopGoesShinobiTests;
+			sourceTree = "<group>";
+		};
+		F45CDDC619124E3700CB06A8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F45CDDC719124E3700CB06A8 /* PopGoesShinobiTests-Info.plist */,
+				F45CDDC819124E3700CB06A8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F45CDDDF191255A800CB06A8 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				F45CDDE0191256E200CB06A8 /* SCAnimatingDataSource.h */,
+				F45CDDE1191256E200CB06A8 /* SCAnimatingDataSource.m */,
+			);
+			name = Datasource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F45CDD9C19124E3700CB06A8 /* PopGoesShinobi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F45CDDCF19124E3700CB06A8 /* Build configuration list for PBXNativeTarget "PopGoesShinobi" */;
+			buildPhases = (
+				860183D2CA4D4A299B2FDDDD /* Check Pods Manifest.lock */,
+				F45CDD9919124E3700CB06A8 /* Sources */,
+				F45CDD9A19124E3700CB06A8 /* Frameworks */,
+				F45CDD9B19124E3700CB06A8 /* Resources */,
+				A08406569F3F47F48D10A84A /* Warn for TODO and FIXME comments */,
+				4D5A776E7B5044349E656F41 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PopGoesShinobi;
+			productName = PopGoesShinobi;
+			productReference = F45CDD9D19124E3700CB06A8 /* PopGoesShinobi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F45CDDBD19124E3700CB06A8 /* PopGoesShinobiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F45CDDD219124E3700CB06A8 /* Build configuration list for PBXNativeTarget "PopGoesShinobiTests" */;
+			buildPhases = (
+				F45CDDBA19124E3700CB06A8 /* Sources */,
+				F45CDDBB19124E3700CB06A8 /* Frameworks */,
+				F45CDDBC19124E3700CB06A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F45CDDC419124E3700CB06A8 /* PBXTargetDependency */,
+			);
+			name = PopGoesShinobiTests;
+			productName = PopGoesShinobiTests;
+			productReference = F45CDDBE19124E3700CB06A8 /* PopGoesShinobiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F45CDD9519124E3700CB06A8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Shinobi Controls";
+				TargetAttributes = {
+					F45CDDBD19124E3700CB06A8 = {
+						TestTargetID = F45CDD9C19124E3700CB06A8;
+					};
+				};
+			};
+			buildConfigurationList = F45CDD9819124E3700CB06A8 /* Build configuration list for PBXProject "PopGoesShinobi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F45CDD9419124E3700CB06A8;
+			productRefGroup = F45CDD9E19124E3700CB06A8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F45CDD9C19124E3700CB06A8 /* PopGoesShinobi */,
+				F45CDDBD19124E3700CB06A8 /* PopGoesShinobiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F45CDD9B19124E3700CB06A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F45CDDB919124E3700CB06A8 /* Images.xcassets in Resources */,
+				F45CDDAB19124E3700CB06A8 /* InfoPlist.strings in Resources */,
+				F45CDDB419124E3700CB06A8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F45CDDBC19124E3700CB06A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F45CDDCA19124E3700CB06A8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4D5A776E7B5044349E656F41 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		860183D2CA4D4A299B2FDDDD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A08406569F3F47F48D10A84A /* Warn for TODO and FIXME comments */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Warn for TODO and FIXME comments";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nFILE_EXTENSIONS=\"h|m|mm|c|cpp\"\nfind -E \"${SRCROOT}\" -ipath \"${SRCROOT}/pods\" -prune -o \\( -regex \".*\\.($FILE_EXTENSIONS)$\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F45CDD9919124E3700CB06A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F45CDDB119124E3700CB06A8 /* SCAppDelegate.m in Sources */,
+				F45CDDB719124E3700CB06A8 /* SCViewController.m in Sources */,
+				F45CDDAD19124E3700CB06A8 /* main.m in Sources */,
+				F45CDDE2191256E200CB06A8 /* SCAnimatingDataSource.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F45CDDBA19124E3700CB06A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F45CDDCC19124E3700CB06A8 /* PopGoesShinobiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F45CDDC419124E3700CB06A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F45CDD9C19124E3700CB06A8 /* PopGoesShinobi */;
+			targetProxy = F45CDDC319124E3700CB06A8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F45CDDA919124E3700CB06A8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F45CDDAA19124E3700CB06A8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F45CDDB219124E3700CB06A8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F45CDDB319124E3700CB06A8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F45CDDC819124E3700CB06A8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F45CDDC919124E3700CB06A8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F45CDDCD19124E3700CB06A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F45CDDCE19124E3700CB06A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F45CDDD019124E3700CB06A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 617C2135FF51479C8018FBCD /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PopGoesShinobi/PopGoesShinobi-Prefix.pch";
+				INFOPLIST_FILE = "PopGoesShinobi/PopGoesShinobi-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F45CDDD119124E3700CB06A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 617C2135FF51479C8018FBCD /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PopGoesShinobi/PopGoesShinobi-Prefix.pch";
+				INFOPLIST_FILE = "PopGoesShinobi/PopGoesShinobi-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F45CDDD319124E3700CB06A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PopGoesShinobi.app/PopGoesShinobi";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PopGoesShinobi/PopGoesShinobi-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PopGoesShinobiTests/PopGoesShinobiTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F45CDDD419124E3700CB06A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PopGoesShinobi.app/PopGoesShinobi";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PopGoesShinobi/PopGoesShinobi-Prefix.pch";
+				INFOPLIST_FILE = "PopGoesShinobiTests/PopGoesShinobiTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F45CDD9819124E3700CB06A8 /* Build configuration list for PBXProject "PopGoesShinobi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F45CDDCD19124E3700CB06A8 /* Debug */,
+				F45CDDCE19124E3700CB06A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F45CDDCF19124E3700CB06A8 /* Build configuration list for PBXNativeTarget "PopGoesShinobi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F45CDDD019124E3700CB06A8 /* Debug */,
+				F45CDDD119124E3700CB06A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F45CDDD219124E3700CB06A8 /* Build configuration list for PBXNativeTarget "PopGoesShinobiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F45CDDD319124E3700CB06A8 /* Debug */,
+				F45CDDD419124E3700CB06A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F45CDD9519124E3700CB06A8 /* Project object */;
+}

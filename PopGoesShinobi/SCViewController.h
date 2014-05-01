@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ShinobiCharts/ShinobiChart.h>
 
 @interface SCViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet ShinobiChart *chart;
 
 @end
