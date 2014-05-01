@@ -27,6 +27,10 @@
         self.categories = categories;
         self.chart = chart;
         self.chart.datasource = self;
+        // Default values
+        self.springBounciness = 4.0;
+        self.springSpeed = 12.0;
+        
         [self initialiseDataPoints];
         
         self.animateableValuesProperty = [POPAnimatableProperty propertyWithName:@"com.shinobicontrols.popgoesshinobi.animatingdatasource" initializer:^(POPMutableAnimatableProperty *prop) {
@@ -61,8 +65,8 @@
         anim.property = self.animateableValuesProperty;
         anim.fromValue = dp.yValue;
         anim.toValue = values[idx];
-        anim.springBounciness = 10;
-        anim.springSpeed = 3;
+        anim.springBounciness = self.springBounciness;
+        anim.springSpeed = self.springSpeed;
         
         [dp pop_addAnimation:anim forKey:@"ValueChangeAnimation"];
     }];

@@ -49,8 +49,15 @@
     return UIInterfaceOrientationMaskLandscape;
 }
 
+
+#pragma mark - UI Handlers
 - (IBAction)handleYearSelected:(id)sender {
     NSArray *values = self.yearlyData[self.yearSelectorSegmented.selectedSegmentIndex];
     [self.datasource animateToValues:values];
+}
+
+- (IBAction)handleSliderValueChanged:(id)sender {
+    self.datasource.springSpeed = self.speedSlider.value;
+    self.datasource.springBounciness = self.bounceSlider.value;
 }
 @end

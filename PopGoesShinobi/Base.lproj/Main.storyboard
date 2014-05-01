@@ -33,21 +33,61 @@
                                     <action selector="handleYearSelected:" destination="vXZ-lx-hvc" eventType="valueChanged" id="rSL-2K-GMC"/>
                                 </connections>
                             </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="iDw-IF-aaT">
+                                <rect key="frame" x="61" y="284" width="150" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="handleSliderValueChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="z7k-rv-HQx"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="UFh-Gh-djw">
+                                <rect key="frame" x="357" y="284" width="143" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="handleSliderValueChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="1Ml-Ct-cFW"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="speed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDB-S5-ls6">
+                                <rect key="frame" x="20" y="290" width="35" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bounce" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGf-fZ-kIa">
+                                <rect key="frame" x="506" y="291" width="42" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="T0N-8o-G2p" firstAttribute="top" secondItem="53W-Af-Dv9" secondAttribute="bottom" constant="8" symbolic="YES" id="Aoo-8c-pZh"/>
+                            <constraint firstItem="tGf-fZ-kIa" firstAttribute="leading" secondItem="UFh-Gh-djw" secondAttribute="trailing" constant="8" symbolic="YES" id="Dga-TK-x3J"/>
+                            <constraint firstItem="UFh-Gh-djw" firstAttribute="centerY" secondItem="tGf-fZ-kIa" secondAttribute="centerY" constant="0.5" id="FIl-oF-8wF"/>
+                            <constraint firstItem="iDw-IF-aaT" firstAttribute="centerY" secondItem="mDB-S5-ls6" secondAttribute="centerY" constant="1.5" id="Kwn-sc-obN"/>
+                            <constraint firstItem="T0N-8o-G2p" firstAttribute="leading" secondItem="iDw-IF-aaT" secondAttribute="trailing" constant="8" symbolic="YES" id="LSb-jm-VZp"/>
                             <constraint firstItem="53W-Af-Dv9" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Om0-20-XkO"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="T0N-8o-G2p" secondAttribute="bottom" constant="20" symbolic="YES" id="RfI-ww-HAf"/>
+                            <constraint firstItem="UFh-Gh-djw" firstAttribute="centerY" secondItem="T0N-8o-G2p" secondAttribute="centerY" constant="1" id="a1b-gl-hLA"/>
                             <constraint firstAttribute="trailing" secondItem="53W-Af-Dv9" secondAttribute="trailing" id="beo-EC-YDo"/>
                             <constraint firstItem="53W-Af-Dv9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="g2S-4P-YBf"/>
+                            <constraint firstItem="iDw-IF-aaT" firstAttribute="leading" secondItem="mDB-S5-ls6" secondAttribute="trailing" constant="8" symbolic="YES" id="kkN-rN-9JN"/>
+                            <constraint firstItem="mDB-S5-ls6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="o8n-C9-V5h"/>
+                            <constraint firstItem="UFh-Gh-djw" firstAttribute="leading" secondItem="T0N-8o-G2p" secondAttribute="trailing" constant="8" symbolic="YES" id="pIN-Tz-XEt"/>
                             <constraint firstAttribute="centerX" secondItem="T0N-8o-G2p" secondAttribute="centerX" id="sNl-LU-jFd"/>
+                            <constraint firstItem="T0N-8o-G2p" firstAttribute="centerY" secondItem="iDw-IF-aaT" secondAttribute="centerY" constant="-1" id="uhF-bl-RdK"/>
+                            <constraint firstAttribute="trailing" secondItem="tGf-fZ-kIa" secondAttribute="trailing" constant="20" symbolic="YES" id="vqX-3H-AW3"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="bounceSlider" destination="UFh-Gh-djw" id="iXj-rZ-u1q"/>
                         <outlet property="chart" destination="53W-Af-Dv9" id="I97-n3-BaH"/>
+                        <outlet property="speedSlider" destination="iDw-IF-aaT" id="4Az-KV-kJa"/>
                         <outlet property="yearSelectorSegmented" destination="T0N-8o-G2p" id="xFA-XC-0YY"/>
                     </connections>
                 </viewController>

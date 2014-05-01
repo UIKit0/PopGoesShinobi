@@ -13,6 +13,9 @@
 
 - (instancetype)initWithChart:(ShinobiChart *)chart categories:(NSArray *)categories;
 
+@property (nonatomic, assign) CGFloat springBounciness;
+@property (nonatomic, assign) CGFloat springSpeed;
+
 - (void)animateToValues:(NSArray *)values;
 
 @end
