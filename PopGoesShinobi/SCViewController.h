@@ -24,6 +24,4 @@
 @property (weak, nonatomic) IBOutlet UISlider *bounceSlider;
 - (IBAction)handleSliderValueChanged:(id)sender;
 
-@property (strong, nonatomic) IBOutletCollection(UIView) NSArray *animationControls;
-
 @end

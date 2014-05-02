@@ -103,10 +103,6 @@
                         <outlet property="chartTypeSegmented" destination="jIz-ZN-ATt" id="pvg-fW-Zzh"/>
                         <outlet property="speedSlider" destination="iDw-IF-aaT" id="4Az-KV-kJa"/>
                         <outlet property="yearSelectorSegmented" destination="T0N-8o-G2p" id="xFA-XC-0YY"/>
-                        <outletCollection property="animationControls" destination="tGf-fZ-kIa" id="8Og-Ig-f3d"/>
-                        <outletCollection property="animationControls" destination="UFh-Gh-djw" id="G7M-fz-Xyz"/>
-                        <outletCollection property="animationControls" destination="iDw-IF-aaT" id="E8B-8L-3kX"/>
-                        <outletCollection property="animationControls" destination="mDB-S5-ls6" id="uX1-he-cKq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

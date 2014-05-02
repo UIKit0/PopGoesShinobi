@@ -13,8 +13,6 @@
 
 @property (nonatomic, strong) SCAnimatingDataSource *datasource;
 @property (nonatomic, strong) NSArray *yearlyData;
-@property (nonatomic, assign) CGFloat springBounciness;
-@property (nonatomic, assign) CGFloat springSpeed;
 
 @end
 
@@ -41,16 +39,12 @@
                         @[@10,  @60,  @110, @40],
                         @[@150, @120, @160, @100]];
     
-    self.springSpeed = 12.0;
-    self.springBounciness = 4.0;
-    
-    // Render the first chart
-    self.chartTypeSegmented.selectedSegmentIndex = 0;
-    [self handleChartTypeSelected:self.chartTypeSegmented];
-    
     // Render the first year available
     self.yearSelectorSegmented.selectedSegmentIndex = 0;
     [self handleYearSelected:self.yearSelectorSegmented];
+    // Render the first chart
+    self.chartTypeSegmented.selectedSegmentIndex = 0;
+    [self handleChartTypeSelected:self.chartTypeSegmented];
 }
 
 - (NSUInteger)supportedInterfaceOrientations
@@ -66,47 +60,18 @@
 }
 
 - (IBAction)handleSliderValueChanged:(id)sender {
-    self.springSpeed = self.speedSlider.value;
-    self.springBounciness = self.bounceSlider.value;
+    self.datasource.springSpeed = self.speedSlider.value;
+    self.datasource.springBounciness = self.bounceSlider.value;
 }
 - (IBAction)handleChartTypeSelected:(id)sender {
     if(self.chartTypeSegmented.selectedSegmentIndex == 0) {
         self.datasource.seriesType = [SChartPieSeries class];
         self.datasource.dataPointType = [SChartRadialDataPoint class];
-        [self setSlidersAsHidden:YES];
     } else {
         self.datasource.seriesType = [SChartColumnSeries class];
         self.datasource.dataPointType = [SChartDataPoint class];
-        [self setSlidersAsHidden:NO];
     }
-    [self updateAnimationCreationBlock];
     [self.chart reloadData];
     [self.chart redrawChart];
-}
-
-- (void)updateAnimationCreationBlock
-{
-    if(self.chartTypeSegmented.selectedSegmentIndex == 0) {
-        self.datasource.animationCreationBlock = ^POPPropertyAnimation*(void) {
-            POPBasicAnimation *anim = [POPBasicAnimation easeInEaseOutAnimation];
-            return anim;
-        };
-    } else {
-        // We capture a weak version of ourself, which means that we can get hold of updates to anim properties
-        __weak typeof(self) weakSelf = self;
-        self.datasource.animationCreationBlock = ^POPPropertyAnimation*(void) {
-            POPSpringAnimation *anim = [POPSpringAnimation animation];
-            anim.springBounciness = weakSelf.springBounciness;
-            anim.springSpeed = weakSelf.springSpeed;
-            return anim;
-        };
-    }
-}
-
-- (void)setSlidersAsHidden:(BOOL)hidden
-{
-    [self.animationControls enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        [obj setHidden:hidden];
-    }];
 }
 @end

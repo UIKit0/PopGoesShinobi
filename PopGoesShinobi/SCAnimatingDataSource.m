@@ -28,6 +28,9 @@
         self.chart = chart;
         self.chart.datasource = self;
         self.chart.delegate = self;
+        // Default values
+        self.springBounciness = 4.0;
+        self.springSpeed = 12.0;
         
         // We'll expect a cartesian chart by default
         self.seriesType = [SChartColumnSeries class];
@@ -63,14 +66,14 @@
     }
     
     [self.datapoints enumerateObjectsUsingBlock:^(SChartDataPoint *dp, NSUInteger idx, BOOL *stop) {
-        if(self.animationCreationBlock != NULL) {
-            POPPropertyAnimation *anim = self.animationCreationBlock();
-            anim.property = self.animateableValuesProperty;
-            anim.fromValue = dp.yValue;
-            anim.toValue = values[idx];
-            
-            [dp pop_addAnimation:anim forKey:@"ValueChangeAnimation"];
-        }
+        POPSpringAnimation *anim = [POPSpringAnimation animation];
+        anim.property = self.animateableValuesProperty;
+        anim.fromValue = dp.yValue;
+        anim.toValue = values[idx];
+        anim.springBounciness = self.springBounciness;
+        anim.springSpeed = self.springSpeed;
+        
+        [dp pop_addAnimation:anim forKey:@"ValueChangeAnimation"];
     }];
 }
 
