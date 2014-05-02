@@ -17,7 +17,6 @@
 @property (nonatomic, assign) CGFloat springSpeed;
 
 // To make the data source more generic
-@property (nonatomic, assign) Class dataPointType;
 @property (nonatomic, copy) SChartSeries* (^seriesCreatorBlock)(void);
 
 - (void)animateToValues:(NSArray *)values;

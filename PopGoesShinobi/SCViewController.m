@@ -73,13 +73,11 @@
             pieSeries.style.showLabels = NO;
             return pieSeries;
         };
-        self.datasource.dataPointType = [SChartRadialDataPoint class];
         self.chart.legend.hidden = NO;
     } else {
         self.datasource.seriesCreatorBlock = ^SChartSeries*() {
             return [SChartColumnSeries new];
         };
-        self.datasource.dataPointType = [SChartDataPoint class];
         self.chart.legend.hidden = YES;
     }
     [self.chart reloadData];

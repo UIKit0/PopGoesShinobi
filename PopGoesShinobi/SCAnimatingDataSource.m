@@ -36,7 +36,6 @@
         self.seriesCreatorBlock = ^SChartSeries*() {
             return [SChartColumnSeries new];
         };
-        self.dataPointType = [SChartDataPoint class];
         
         [self initialiseDataPoints];
         
@@ -84,7 +83,7 @@
 {
     NSMutableArray *newDatapoints = [NSMutableArray new];
     [self.categories enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        SChartDataPoint *dp = [self.dataPointType new];
+        SChartDataPoint *dp = [SChartDataPoint new];
         dp.xValue = obj;
         dp.yValue = @1;
         [newDatapoints addObject:dp];
