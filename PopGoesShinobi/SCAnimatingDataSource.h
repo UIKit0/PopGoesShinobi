@@ -8,17 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <ShinobiCharts/ShinobiChart.h>
+#import <POP/POP.h>
 
 @interface SCAnimatingDataSource : NSObject
 
 - (instancetype)initWithChart:(ShinobiChart *)chart categories:(NSArray *)categories;
 
-@property (nonatomic, assign) CGFloat springBounciness;
-@property (nonatomic, assign) CGFloat springSpeed;
-
 // To make the data source more generic
 @property (nonatomic, assign) Class dataPointType;
 @property (nonatomic, assign) Class seriesType;
+@property (nonatomic, copy) POPPropertyAnimation* (^animationCreationBlock)(void);
 
 - (void)animateToValues:(NSArray *)values;
 
