@@ -16,6 +16,10 @@
 @property (nonatomic, assign) CGFloat springBounciness;
 @property (nonatomic, assign) CGFloat springSpeed;
 
+// To make the data source more generic
+@property (nonatomic, assign) Class dataPointType;
+@property (nonatomic, assign) Class seriesType;
+
 - (void)animateToValues:(NSArray *)values;
 
 @end
