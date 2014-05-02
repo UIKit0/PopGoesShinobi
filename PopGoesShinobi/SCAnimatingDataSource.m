@@ -45,7 +45,7 @@
             };
             // write value
             prop.writeBlock = ^(SChartDataPoint *dp, const CGFloat values[]) {
-                dp.yValue = @(values[0]);
+                dp.yValue = @(MAX(values[0], 0));
                 [self.chart reloadData];
                 [self.chart redrawChart];
             };
