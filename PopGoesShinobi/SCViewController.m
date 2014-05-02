@@ -35,6 +35,9 @@
     yAxis.title = @"Sales";
     self.chart.yAxis = yAxis;
     
+    self.chart.legend.placement = SChartLegendPlacementInsidePlotArea;
+    self.chart.legend.position = SChartLegendPositionMiddleRight;
+    
     self.yearlyData = @[@[@120, @140, @50,  @120],
                         @[@10,  @60,  @110, @40],
                         @[@150, @120, @160, @100]];
@@ -65,11 +68,19 @@
 }
 - (IBAction)handleChartTypeSelected:(id)sender {
     if(self.chartTypeSegmented.selectedSegmentIndex == 0) {
-        self.datasource.seriesType = [SChartPieSeries class];
+        self.datasource.seriesCreatorBlock = ^SChartSeries*() {
+            SChartPieSeries *pieSeries = [SChartPieSeries new];
+            pieSeries.style.showLabels = NO;
+            return pieSeries;
+        };
         self.datasource.dataPointType = [SChartRadialDataPoint class];
+        self.chart.legend.hidden = NO;
     } else {
-        self.datasource.seriesType = [SChartColumnSeries class];
+        self.datasource.seriesCreatorBlock = ^SChartSeries*() {
+            return [SChartColumnSeries new];
+        };
         self.datasource.dataPointType = [SChartDataPoint class];
+        self.chart.legend.hidden = YES;
     }
     [self.chart reloadData];
     [self.chart redrawChart];

@@ -9,7 +9,7 @@
 #import "SCAnimatingDataSource.h"
 #import <POP/POP.h>
 
-@interface SCAnimatingDataSource () <SChartDatasource, SChartDelegate>
+@interface SCAnimatingDataSource () <SChartDatasource>
 
 @property (nonatomic, strong) NSArray *categories;
 @property (nonatomic, strong) NSArray *datapoints;
@@ -27,13 +27,15 @@
         self.categories = categories;
         self.chart = chart;
         self.chart.datasource = self;
-        self.chart.delegate = self;
+        
         // Default values
         self.springBounciness = 4.0;
         self.springSpeed = 12.0;
         
         // We'll expect a cartesian chart by default
-        self.seriesType = [SChartColumnSeries class];
+        self.seriesCreatorBlock = ^SChartSeries*() {
+            return [SChartColumnSeries new];
+        };
         self.dataPointType = [SChartDataPoint class];
         
         [self initialiseDataPoints];
@@ -90,6 +92,7 @@
     self.datapoints = [newDatapoints copy];
 }
 
+
 #pragma mark - SChartDataSource methods
 - (NSInteger)numberOfSeriesInSChart:(ShinobiChart *)chart
 {
@@ -98,7 +101,7 @@
 
 - (SChartSeries *)sChart:(ShinobiChart *)chart seriesAtIndex:(NSInteger)index
 {
-    return [self.seriesType new];
+    return self.seriesCreatorBlock();
 }
 
 - (NSInteger)sChart:(ShinobiChart *)chart numberOfDataPointsForSeriesAtIndex:(NSInteger)seriesIndex
@@ -109,12 +112,6 @@
 - (id<SChartData>)sChart:(ShinobiChart *)chart dataPointAtIndex:(NSInteger)dataIndex forSeriesAtIndex:(NSInteger)seriesIndex
 {
     return self.datapoints[dataIndex];
-}
-
-#pragma mark - SChartDelegate methods
-- (void)sChart:(ShinobiChart *)chart alterLabel:(UILabel *)label forDatapoint:(SChartRadialDataPoint *)datapoint atSliceIndex:(NSInteger)index inRadialSeries:(SChartRadialSeries *)series
-{
-    label.text = datapoint.name;
 }
 
 @end

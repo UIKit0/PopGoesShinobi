@@ -18,7 +18,7 @@
 
 // To make the data source more generic
 @property (nonatomic, assign) Class dataPointType;
-@property (nonatomic, assign) Class seriesType;
+@property (nonatomic, copy) SChartSeries* (^seriesCreatorBlock)(void);
 
 - (void)animateToValues:(NSArray *)values;
 
