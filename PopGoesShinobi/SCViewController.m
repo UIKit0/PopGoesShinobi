@@ -28,8 +28,6 @@
     NSArray *categories = @[@"Q1", @"Q2", @"Q3", @"Q4"];
     self.datasource = [[SCAnimatingDataSource alloc] initWithChart:self.chart
                                                         categories:categories];
-    self.datasource.seriesType = [SChartPieSeries class];
-    self.datasource.dataPointType = [SChartRadialDataPoint class];
     
     SChartAxis *xAxis = [SChartCategoryAxis new];
     self.chart.xAxis = xAxis;
@@ -39,11 +37,14 @@
     
     self.yearlyData = @[@[@120, @140, @50,  @120],
                         @[@10,  @60,  @110, @40],
-                        @[@150, @120, @160, @200]];
+                        @[@150, @120, @160, @100]];
     
     // Render the first year available
     self.yearSelectorSegmented.selectedSegmentIndex = 0;
     [self handleYearSelected:self.yearSelectorSegmented];
+    // Render the first chart
+    self.chartTypeSegmented.selectedSegmentIndex = 0;
+    [self handleChartTypeSelected:self.chartTypeSegmented];
 }
 
 - (NSUInteger)supportedInterfaceOrientations
@@ -61,5 +62,16 @@
 - (IBAction)handleSliderValueChanged:(id)sender {
     self.datasource.springSpeed = self.speedSlider.value;
     self.datasource.springBounciness = self.bounceSlider.value;
+}
+- (IBAction)handleChartTypeSelected:(id)sender {
+    if(self.chartTypeSegmented.selectedSegmentIndex == 0) {
+        self.datasource.seriesType = [SChartPieSeries class];
+        self.datasource.dataPointType = [SChartRadialDataPoint class];
+    } else {
+        self.datasource.seriesType = [SChartColumnSeries class];
+        self.datasource.dataPointType = [SChartDataPoint class];
+    }
+    [self.chart reloadData];
+    [self.chart redrawChart];
 }
 @end

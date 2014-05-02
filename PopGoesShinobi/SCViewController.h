@@ -16,6 +16,10 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *yearSelectorSegmented;
 - (IBAction)handleYearSelected:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *chartTypeSegmented;
+- (IBAction)handleChartTypeSelected:(id)sender;
+
+
 @property (weak, nonatomic) IBOutlet UISlider *speedSlider;
 @property (weak, nonatomic) IBOutlet UISlider *bounceSlider;
 - (IBAction)handleSliderValueChanged:(id)sender;

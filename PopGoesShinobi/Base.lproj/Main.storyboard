@@ -61,12 +61,25 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jIz-ZN-ATt">
+                                <rect key="frame" x="425" y="28" width="123" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Pie"/>
+                                    <segment title="Column"/>
+                                </segments>
+                                <connections>
+                                    <action selector="handleChartTypeSelected:" destination="vXZ-lx-hvc" eventType="valueChanged" id="Nh2-Kg-cPY"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="jIz-ZN-ATt" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" symbolic="YES" id="6r5-eb-aTw"/>
                             <constraint firstItem="T0N-8o-G2p" firstAttribute="top" secondItem="53W-Af-Dv9" secondAttribute="bottom" constant="8" symbolic="YES" id="Aoo-8c-pZh"/>
                             <constraint firstItem="tGf-fZ-kIa" firstAttribute="leading" secondItem="UFh-Gh-djw" secondAttribute="trailing" constant="8" symbolic="YES" id="Dga-TK-x3J"/>
                             <constraint firstItem="UFh-Gh-djw" firstAttribute="centerY" secondItem="tGf-fZ-kIa" secondAttribute="centerY" constant="0.5" id="FIl-oF-8wF"/>
+                            <constraint firstAttribute="trailing" secondItem="jIz-ZN-ATt" secondAttribute="trailing" constant="20" symbolic="YES" id="GKE-Am-FdX"/>
                             <constraint firstItem="iDw-IF-aaT" firstAttribute="centerY" secondItem="mDB-S5-ls6" secondAttribute="centerY" constant="1.5" id="Kwn-sc-obN"/>
                             <constraint firstItem="T0N-8o-G2p" firstAttribute="leading" secondItem="iDw-IF-aaT" secondAttribute="trailing" constant="8" symbolic="YES" id="LSb-jm-VZp"/>
                             <constraint firstItem="53W-Af-Dv9" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Om0-20-XkO"/>
@@ -87,6 +100,7 @@
                     <connections>
                         <outlet property="bounceSlider" destination="UFh-Gh-djw" id="iXj-rZ-u1q"/>
                         <outlet property="chart" destination="53W-Af-Dv9" id="I97-n3-BaH"/>
+                        <outlet property="chartTypeSegmented" destination="jIz-ZN-ATt" id="pvg-fW-Zzh"/>
                         <outlet property="speedSlider" destination="iDw-IF-aaT" id="4Az-KV-kJa"/>
                         <outlet property="yearSelectorSegmented" destination="T0N-8o-G2p" id="xFA-XC-0YY"/>
                     </connections>
