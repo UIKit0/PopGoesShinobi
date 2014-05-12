@@ -28,6 +28,8 @@ this you should go and take a look at the excellent
 [user guide](http://www.shinobicontrols.com/docs/ShinobiControls/ShinobiCharts/2.6.0/Premium/Normal/user_guide.html) -
 it's full of info to take you from a novice to a ninja in no time.
 
+![Animating column chart](img/popCharts_animating_column.gif)
+
 ## Datasource design
 
 I want to animate some quarterly sales figures between different years:
@@ -39,8 +41,8 @@ I want to animate some quarterly sales figures between different years:
 | Q3 | 50   | 110  | 160  |
 | Q4 | 120  | 40   | 100  |
 
-The important point here is that the number of data points remains constant (4)
-- we're only going to consider the case when data points change value - not
+The important point here is that the number of data points remains constant (4) -
+we're only going to consider the case when data points change value - not
 appear and disappear, although that is a potential extension. The data is
 categorical (with names `Q1`, `Q2`, `Q3`, `Q4`), and these categories remain
 constant as the data changes. Therefore we'll create a data source in which
@@ -277,7 +279,7 @@ just snap to their new value. This blog post was sold as being about animating
 this change, and we've not touched on that at all yet. Let's get to it.
 
 
-## Creating a custom animation property with POP
+## Creating a custom animation property with pop
 
 One of the great things about pop (there are many) is that it is a general purpose
 animation engine - you can pretty much animate anything. For example, you could
@@ -379,9 +381,27 @@ If you run the app up now and switch between years then you'll see that the
 data points animate nicely between values. Pretty cool for about 20 lines of
 animation code!
 
+![Animating pie chart](img/popCharts_animating_pie.gif)
+
 The sample project includes some `UISlider` controls to enable tuning of the
 spring bounciness and speed properties in the animation. You can play with these
 to see the effect on the animation.
 
 
 ## Conclusion
+
+Pop is a really quite powerful framework - a generic animator, which can be used
+to animate pretty much anything. In the world of iOS it provides the real-world
+authenticity of UIKit Dynamics, but with an API more akin to CoreAnimation. In
+fact if you've used CoreAnimation, then pop isn't too difficult to grasp.
+
+In order to animate the data points in a ShinobiChart, we used the ability of
+pop to animate arbitrary values, by creating our own animateable property. This
+functionality could be extended to any number of things, both on a chart (e.g.
+an annotation) or in an unrelated context (e.g. volume).
+
+Take a look at pop - see whether there are things you can animate which would
+have been really difficult or impossible using CoreAnimation. I don't advocate
+replacing all your animation with pop, but it certainly has some advantages.
+
+sam
