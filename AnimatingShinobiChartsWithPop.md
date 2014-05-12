@@ -368,7 +368,7 @@ current value to the new value. The syntax of pop is very similar to CoreAnimati
 We create an animation object - here a `POPSpringAnimation`, and set the property
 to the custom property we created. We want to animate from the current value
 (`dp.yValue`) to the value sent as an argument, and there are a couple of
-properties to configure the behaviour of the spring animation.
+properties to configure the behavior of the spring animation.
 
 Finally we use the new method added via pop category to `NSObject` to add the
 animation to the datapoint. Specifying the key like this means that if the
